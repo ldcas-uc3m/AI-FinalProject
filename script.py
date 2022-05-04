@@ -13,8 +13,8 @@ VALUES_PATH = "./values.json"
 POLICIES_PATH = "policies.json"
 
 # Model
-states = ["HHH", "HHL", "HLL", "LLL", "LHH", "LLH", "LHL", "HLH"]
-actions = ["N", "W", "E"]
+STATES = ["HHH", "HHL", "HLL", "LLL", "LHH", "LLH", "LHL", "HLH"]
+ACTIONS = ["N", "W", "E"]
 
 
 def infer():
