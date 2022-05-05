@@ -21,20 +21,28 @@ POLICIES_PATH = "./output/policies.json"
 STATES = ["HHH", "HHL", "HLL", "LLL", "LHH", "LLH", "LHL", "HLH"]
 ACTIONS = ["N", "E", "W"]
 
+TIME_UNIT = 180  # number of measures per unit of time
+
 
 def infer():
     """
-    Get probabilities for each action and each transition, using data from CSV_PATH,
+    Get probabilities for each action and each transition, for each day, using data from CSV_PATH,
     and save it as a JSON file to PROBABILITIES_PATH.
     The format of the JSON is:
     {
-        <action>: {
-            <state0>-><state1>: <probability>,
+        <hour> : {
+            <action>: {
+                <state0>-><state1>: <probability>,
+                [...]
+            },
             [...]
         },
         [...]
     }
     """
+
+    # TODO: take FUCKING TIME into account
+
     json_data = {}
     count = []  # to count the number of times an action has appeared
     for elem in ACTIONS:  # just to make it fit any model, put one 0 per action
@@ -104,7 +112,10 @@ def calculateValues():
     calculate the value of each action, and save it to VALUES_PATH.
     The format for the JSON is:
     {
-        <action>: <cost>,
+        <hour> : {
+            <action>: <cost>,
+            [...]
+        },
         [...]
     }
     """
