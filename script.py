@@ -7,10 +7,10 @@ ITERATIONS = 69
 COST = 1
 
 # Paths
-CSV_PATH = "./Data.csv"
-PROBABILITIES_PATH = "./probabilities.json"
-VALUES_PATH = "./values.json"
-POLICIES_PATH = "policies.json"
+CSV_PATH = "./data.csv"
+PROBABILITIES_PATH = "./output/probabilities.json"
+VALUES_PATH = "./output/values.json"
+POLICIES_PATH = "./output/policies.json"
 
 # Model
 STATES = ["HHH", "HHL", "HLL", "LLL", "LHH", "LLH", "LHL", "HLH"]
