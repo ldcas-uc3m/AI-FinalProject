@@ -29,7 +29,7 @@ def infer():
     The format of the JSON is:
     {
         <action>: {
-            <state0>.<state1>: <probability>,
+            <state0>-><state1>: <probability>,
             [...]
         },
         [...]
@@ -60,12 +60,12 @@ def infer():
 
             # initialize if it's new
             if action not in json_data:
-                json_data[action] = {init_state + "." + final_state : 0}
+                json_data[action] = {init_state + "->" + final_state : 0}
             elif init_state + "." + final_state not in json_data[action]:
-                json_data[action][init_state + "." + final_state] = 0
+                json_data[action][init_state + "->" + final_state] = 0
             
             # update the count for that transition, within that action
-            json_data[action][init_state + "." + final_state] += 1
+            json_data[action][init_state + "->" + final_state] += 1
 
             # update the count for that action
             for i in range(len(ACTIONS)):
