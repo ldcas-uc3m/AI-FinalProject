@@ -139,7 +139,7 @@ def calculateValues():
     The format for the JSON is:
     {
         <hour> : {
-            <action>: <cost>,
+            <state>: <cost>,
             [...]
         },
         [...]
