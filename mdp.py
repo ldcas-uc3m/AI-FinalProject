@@ -8,7 +8,7 @@ ITERATIONS = 69
 COST = 1
 
 # Paths
-CSV_PATH = "./data.csv"
+CSV_PATH = "./Data.csv"
 """
 The format of the CSV file is:
 Initial traffic level N;Initial traffic level E;Initial traffic level W;Green traffic light;Final traffic level N;Final traffic level E;Final traffic level W
