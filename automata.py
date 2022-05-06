@@ -2,6 +2,7 @@ from mdp import POLICIES_PATH, ACTIONS
 
 import json
 import time
+import random
 
 
 CYCLE = 20  # time between decisions
@@ -11,11 +12,16 @@ def generateInput():
     """
     Generates the input for the automata: [state, hour]
     """
+
     state = ""
-    hour = 0
+    for i in range(3):
+        if bool(random.randint(0, 1)):
+            state += "H"
+        else:
+            state += "L"
 
-    # TODO
-
+    hour = random.randint(0, 23)
+    
     return state, hour
 
 
