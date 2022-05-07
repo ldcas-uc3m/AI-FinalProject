@@ -158,10 +158,7 @@ def calculateValues():
 
     # save to file
     with open(VALUES_PATH, "w") as outfile:
-        json.dump(json_data, outfile, indent=4, sort_keys=True)
-
-
-    pass
+        json.dump(json_val, outfile, indent=4, sort_keys=True)
 
 
 
@@ -200,20 +197,20 @@ def optimalPolicies():
                 for stat_p in prob_json[hour][act]:
                     if stat_p[0:3] == stat:
                         if act == "N":
-                            val_n = prob_json[hour][act][stat_p] * json_val[hour][stat_p[5:]]
+                            val_n = prob_json[hour][act][stat_p] * val_json[hour][stat_p[5:]]
                             values[0] = values[0] + val_n
                         if act == "E":
-                            val_n = prob_json[hour][act][stat_p] * json_val[hour][stat_p[5:]]
+                            val_n = prob_json[hour][act][stat_p] * val_json[hour][stat_p[5:]]
                             values[1] = values[1] + val_n
                         if act == "W":
-                            val_n = prob_json[hour][act][stat_p] * json_val[hour][stat_p[5:]]
+                            val_n = prob_json[hour][act][stat_p] * val_json[hour][stat_p[5:]]
                             values[2] = values[2] + val_n
 
             json_opt[hour][stat] = ACTIONS[values.index(min(values))]
 
     # save to file
     with open(POLICIES_PATH, "w") as outfile:
-        json.dump(json_data, outfile, indent=4, sort_keys=True)
+        json.dump(json_opt, outfile, indent=4, sort_keys=True)
 
 
 def runMDP():
