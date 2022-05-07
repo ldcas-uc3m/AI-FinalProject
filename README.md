@@ -9,7 +9,8 @@ A traffic intersection can be approached by vehicles from the North, from the Ea
 
 The flow of vehicles in each direction encounters a traffic light before reaching the intersection, which can be either green or red. An operator must select every 20 seconds which of the three traffic lights to turn green: the other two will automatically turn red.  
 Sensors measure the level of traffic in each direction prior to the intersection. The values can be: High or Low. When the traffic light in one direction is green, the level will normally stay the same or go down, only very occasionally increasing. When the traffic light is closed, the level stays the same or rises.  
-We want to design an automaton that opens the appropriate traffic light at each cycle following the optimal policy of the corresponding MDP. The target situation is that traffic in all three directions is Low. In such a situation, the automaton stops working.
+We want to design an automaton that opens the appropriate traffic light at each cycle following the optimal policy of the corresponding MDP. The target situation is that traffic in all three directions is Low. In such a situation, the automaton stops working.  
+The main objective of the project is to obtain the optimal policy for the automaton.
 
 ## Input data
 Historical data is available for situations where we know:
@@ -24,11 +25,4 @@ High;High;Low;E;High;High;High
 ```
 indicates that we had High traffic coming in from the North and East and Low traffic from the West, the traffic light controlling incoming traffic from the East was green and within 20 seconds traffic was High in all three directions.
 
-## Project development
-The main objective of the project is to obtain the optimal policy for the automaton. The first step will be to identify the tasks necessary to reach this goal. Some tasks may require the development of software. The programs should be as generic as possible, using constants to adapt them to this particular project. The programming language must be Python. To use other languages, you should consult your group teacher.
-The student must answer the following questions:
-- **Q1**. The input data does not include any cases where the starting situation was low traffic level in all three directions. Is this normal? If you had this kind of data, what would happen or what should we have done?
-- **Q2**. The statement does not say anything about the cost of the actions. What reasonable assumption could we make?
-- **Q3**. What are the expected values of the states? Provide the values to six decimal places. The precision must be greater than one thousandth.
-- **Q4**. What is the optimal policy?
-- **Q5**. If we had also had incoming traffic from the South and for each direction we had measured traffic at 5 levels instead of 2, what would have changed in the problem?
+## Implementation
