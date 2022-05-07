@@ -143,7 +143,7 @@ def calculateValues():
                 values=[COST,COST,COST]
                 for act in ACTIONS:
                     for stat_p in prob_json[hour][act]:
-                        if stat_p[0:3] == stat:
+                        if stat_p[0:3] == stat and stat_p[5:]!="LLL":
                             if act == "N":
                                 val_n = prob_json[hour][act][stat_p] * json_val[hour][stat_p[5:]]
                                 values[0] = values[0] + val_n
@@ -195,7 +195,7 @@ def optimalPolicies():
             values=[COST,COST,COST]
             for act in ACTIONS:
                 for stat_p in prob_json[hour][act]:
-                    if stat_p[0:3] == stat:
+                    if stat_p[0:3] == stat and stat_p[5:]!="LLL":
                         if act == "N":
                             val_n = prob_json[hour][act][stat_p] * val_json[hour][stat_p[5:]]
                             values[0] = values[0] + val_n
