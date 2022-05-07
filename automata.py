@@ -1,4 +1,4 @@
-from mdp import POLICIES_PATH, ACTIONS
+from model import *
 
 import json
 import time
@@ -47,7 +47,7 @@ def decide(state, hour, data):
     return action
 
 
-def run():
+def runAutomata():
     """
     Run the automata. Outputs to the console the action for the generated data.
     """
@@ -66,4 +66,4 @@ def run():
 
 
 if __name__ == "__main__":
-    run()
+    runAutomata()
