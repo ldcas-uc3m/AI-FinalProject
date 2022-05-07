@@ -69,7 +69,7 @@ def infer():
             # initialize if it's new
             if action not in json_data:
                 json_data[action] = {init_state + "->" + final_state : 0}
-            elif init_state + "." + final_state not in json_data[action]:
+            elif init_state + "->" + final_state not in json_data[action]:
                 json_data[action][init_state + "->" + final_state] = 0
             
             # update the count for that transition, within that action
@@ -113,13 +113,50 @@ def calculateValues():
     The format for the JSON is:
     {
         <hour> : {
-            <action>: <cost>,
+            <state>: <cost>,
             [...]
         },
         [...]
     }
     """
+    json_val = {}
+
+    with open(PROBABILITIES_PATH, 'r') as probabilities:
+        prob_json = json.load(probabilities)
+        
+    for hour in prob_json:
+        json_val[hour] = {}
+        for act in prob_json[hour]:
+            for stat in prob_json[hour][act]:
+                if stat[0:3] not in json_val[hour]:
+                    json_val[hour][stat[0:3]] = 0
+
+    for hour in json_val:
+        for i in range(ITERATIONS):
+            for stat in json_val[hour]:
+                values=[COST,COST,COST]
+                for act in ACTIONS:
+                    for stat_p in prob_json[hour][act]:
+                        if stat_p[0:3] == stat:
+                            if act == "N":
+                                val_n = prob_json[hour][act][stat_p] * json_val[hour][stat_p[5:]]
+                                values[0] = values[0] + val_n
+                            if act == "E":
+                                val_n = prob_json[hour][act][stat_p] * json_val[hour][stat_p[5:]]
+                                values[1] = values[1] + val_n
+                            if act == "W":
+                                val_n = prob_json[hour][act][stat_p] * json_val[hour][stat_p[5:]]
+                                values[2] = values[2] + val_n
+
+                json_val[hour][stat] = min(values)
+
+    # save to file
+    with open(VALUES_PATH, "w") as outfile:
+        json.dump(json_data, outfile, indent=4, sort_keys=True)
+
+
     pass
+
 
 
 def optimalPolicies():
@@ -132,6 +169,44 @@ def optimalPolicies():
         [...]
     }
     """
+
+    json_opt = {}
+
+    with open(PROBABILITIES_PATH, 'r') as probabilities:
+        prob_json = json.load(probabilities)
+
+    with open(VALUES_PATH, 'r') as values:
+        val_json = json.load(values)
+
+
+    for hour in val_json:
+        json_opt[hour] = {}
+        for stat in val_json[hour]:
+            json_opt[hour][stat] = 0
+
+    for hour in json_opt:
+        for stat in json_opt[hour]:
+            values=[COST,COST,COST]
+            for act in ACTIONS:
+                for stat_p in prob_json[hour][act]:
+                    if stat_p[0:3] == stat:
+                        if act == "N":
+                            val_n = prob_json[hour][act][stat_p] * json_val[hour][stat_p[5:]]
+                            values[0] = values[0] + val_n
+                        if act == "E":
+                            val_n = prob_json[hour][act][stat_p] * json_val[hour][stat_p[5:]]
+                            values[1] = values[1] + val_n
+                        if act == "W":
+                            val_n = prob_json[hour][act][stat_p] * json_val[hour][stat_p[5:]]
+                            values[2] = values[2] + val_n
+
+            json_opt[hour][stat] = ACTIONS[values.index(min(values))]
+
+    # save to file
+    with open(POLICIES_PATH, "w") as outfile:
+        json.dump(json_data, outfile, indent=4, sort_keys=True)
+
+
     pass
 
 
