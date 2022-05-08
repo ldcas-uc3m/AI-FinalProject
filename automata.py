@@ -53,7 +53,7 @@ def decide(state: str, hour: int, data: dict):
 
 def runAutomata():
     """
-    Run the automata. Outputs to the console the action for the generated data.
+    Run the automata. Outputs to the console and to LOGS_PATH the action for the generated data.
     """
     
     # load data from MDP model
@@ -64,6 +64,10 @@ def runAutomata():
     while True:
         state, hour = generateRandomInput()
         action = decide(state, hour, data)
+
+        # log data
+        with open(LOGS_PATH, "a") as log_file:
+            log_file.write("State: " + state + ", Hour: " + str(hour) + ", Action: " + action)
 
         print("State:", state, "\b, Hour:", hour, "\b, Action:", action)
 
