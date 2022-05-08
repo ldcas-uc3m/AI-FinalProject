@@ -6,9 +6,10 @@ import random
 
 
 CYCLE = 20  # time between decisions
+i = 0  # current iteration of cycle (when LLL)
 
 
-def generateInput():
+def generateRandomInput():
     """
     Generates the input for the automata: [state, hour]
     """
@@ -25,7 +26,7 @@ def generateInput():
     return state, hour
 
 
-def decide(state, hour, data):
+def decide(state: str, hour: int, data: dict):
     """
     Given an input state and hour, and the optimal policies data from the MPD,
     decides the best action.
@@ -33,6 +34,9 @@ def decide(state, hour, data):
     actions.
     """
     global i
+
+    if hour < 0 or hour > 23 or state not in STATES:
+        raise "Invalid Parameters"
 
     if state == "LLL":  # do an action on a cycle
         action = ACTIONS[i]
@@ -42,7 +46,7 @@ def decide(state, hour, data):
         if i >= len(ACTIONS):
             i = 0
     else:
-        action = data[hour][state]
+        action = data[str(hour)][state]
 
     return action
 
@@ -53,14 +57,15 @@ def runAutomata():
     """
     
     # load data from MDP model
-    data = json.loads(POLICIES_PATH)
+    with open(POLICIES_PATH, 'r') as policies:
+        data = json.load(policies)
 
     i = 0  # count current cycle of rotating lights
     while True:
-        state, hour = generateInput()
+        state, hour = generateRandomInput()
         action = decide(state, hour, data)
 
-        print("Action:", action)
+        print("State:", state, "\b, Hour:", hour, "\b, Action:", action)
 
         time.sleep(CYCLE)
 

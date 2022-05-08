@@ -1,0 +1,218 @@
+{
+    "0": {
+        "HHH": "E",
+        "HHL": "W",
+        "HLH": "W",
+        "HLL": "E",
+        "LHH": "N",
+        "LHL": "N",
+        "LLH": "E"
+    },
+    "1": {
+        "HHH": "N",
+        "HHL": "E",
+        "HLH": "N",
+        "HLL": "N",
+        "LHH": "E",
+        "LHL": "W",
+        "LLH": "E"
+    },
+    "10": {
+        "HHH": "N",
+        "HHL": "E",
+        "HLH": "E",
+        "HLL": "N",
+        "LHH": "W",
+        "LHL": "W",
+        "LLH": "W"
+    },
+    "11": {
+        "HHH": "W",
+        "HHL": "W",
+        "HLH": "N",
+        "HLL": "N",
+        "LHH": "N",
+        "LHL": "N",
+        "LLH": "N"
+    },
+    "12": {
+        "HHH": "W",
+        "HHL": "N",
+        "HLH": "N",
+        "HLL": "W",
+        "LHH": "N",
+        "LHL": "E",
+        "LLH": "E"
+    },
+    "13": {
+        "HHH": "N",
+        "HHL": "E",
+        "HLH": "N",
+        "HLL": "E",
+        "LHH": "E",
+        "LHL": "W",
+        "LLH": "W"
+    },
+    "14": {
+        "HHH": "E",
+        "HHL": "W",
+        "HLH": "N",
+        "HLL": "E",
+        "LHH": "E",
+        "LHL": "E",
+        "LLH": "W"
+    },
+    "15": {
+        "HHH": "E",
+        "HHL": "W",
+        "HLH": "W",
+        "HLL": "N",
+        "LHH": "E",
+        "LHL": "N",
+        "LLH": "W"
+    },
+    "16": {
+        "HHH": "N",
+        "HHL": "W",
+        "HLH": "E",
+        "HLL": "E",
+        "LHH": "N",
+        "LHL": "N",
+        "LLH": "E"
+    },
+    "17": {
+        "HHH": "E",
+        "HHL": "N",
+        "HLH": "E",
+        "HLL": "W",
+        "LHH": "N",
+        "LHL": "N",
+        "LLH": "W"
+    },
+    "18": {
+        "HHH": "W",
+        "HHL": "E",
+        "HLH": "E",
+        "HLL": "W",
+        "LHH": "N",
+        "LHL": "W",
+        "LLH": "W"
+    },
+    "19": {
+        "HHH": "W",
+        "HHL": "N",
+        "HLH": "E",
+        "HLL": "W",
+        "LHH": "N",
+        "LHL": "E",
+        "LLH": "E"
+    },
+    "2": {
+        "HHH": "N",
+        "HHL": "E",
+        "HLH": "W",
+        "HLL": "N",
+        "LHH": "E",
+        "LHL": "W",
+        "LLH": "E"
+    },
+    "20": {
+        "HHH": "N",
+        "HHL": "N",
+        "HLH": "W",
+        "HLL": "E",
+        "LHH": "E",
+        "LHL": "N",
+        "LLH": "W"
+    },
+    "21": {
+        "HHH": "W",
+        "HHL": "W",
+        "HLH": "W",
+        "HLL": "N",
+        "LHH": "N",
+        "LHL": "E",
+        "LLH": "E"
+    },
+    "22": {
+        "HHH": "W",
+        "HHL": "N",
+        "HLH": "E",
+        "HLL": "W",
+        "LHH": "N",
+        "LHL": "N",
+        "LLH": "E"
+    },
+    "23": {
+        "HHH": "W",
+        "HHL": "N",
+        "HLH": "E",
+        "HLL": "N",
+        "LHH": "E",
+        "LHL": "W",
+        "LLH": "E"
+    },
+    "3": {
+        "HHH": "W",
+        "HHL": "E",
+        "HLH": "E",
+        "HLL": "N",
+        "LHH": "N",
+        "LHL": "E",
+        "LLH": "W"
+    },
+    "4": {
+        "HHH": "W",
+        "HHL": "E",
+        "HLH": "N",
+        "HLL": "N",
+        "LHH": "E",
+        "LHL": "W",
+        "LLH": "E"
+    },
+    "5": {
+        "HHH": "N",
+        "HHL": "E",
+        "HLH": "W",
+        "HLL": "N",
+        "LHH": "W",
+        "LHL": "N",
+        "LLH": "W"
+    },
+    "6": {
+        "HHH": "W",
+        "HHL": "N",
+        "HLH": "N",
+        "HLL": "N",
+        "LHH": "W",
+        "LHL": "E",
+        "LLH": "W"
+    },
+    "7": {
+        "HHH": "N",
+        "HHL": "W",
+        "HLH": "E",
+        "HLL": "N",
+        "LHH": "N",
+        "LHL": "E",
+        "LLH": "W"
+    },
+    "8": {
+        "HHH": "E",
+        "HHL": "N",
+        "HLH": "W",
+        "HLL": "N",
+        "LHH": "W",
+        "LHL": "E",
+        "LLH": "W"
+    },
+    "9": {
+        "HHH": "N",
+        "HHL": "E",
+        "HLH": "W",
+        "HLL": "E",
+        "LHH": "W",
+        "LHL": "N",
+        "LLH": "W"
+    }
+}

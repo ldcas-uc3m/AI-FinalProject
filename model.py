@@ -17,8 +17,8 @@ POLICIES_PATH = "./output/policies.json"
 
 # Model
 # states are defined as <N traffic level><E traffic level><W traffic level>
-STATES = ["HHH", "HHL", "HLL", "LLL", "LHH", "LLH", "LHL", "HLH"]
-ACTIONS = ["N", "E", "W"]
+STATES = ("HHH", "HHL", "HLL", "LLL", "LHH", "LLH", "LHL", "HLH")
+ACTIONS = ("N", "E", "W")
 
 TIME_UNIT = 180  # number of measures per unit of time
 HOURS = 24  # number of units of time
