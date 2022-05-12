@@ -127,18 +127,18 @@ def test(iterations: int = 100):
         # save iteration
         results[i] = data
 
-        # print results
-        print("Iteration:", i)
+        # results
+        # print("Iteration:", i)
         if data["automata"]["steps"] < data["dummy"]["steps"]:  # automata wins
             score["automata"] += 1
-            print("Automata wins!:", data["automata"]["steps"], "vs", data["dummy"]["steps"])
+            # print("Automata wins!:", data["automata"]["steps"], "vs", data["dummy"]["steps"])
 
         elif data["automata"]["steps"] > data["dummy"]["steps"]:  # dummy wins
             score["dummy"] += 1
-            print("Dummy wins!:", data["dummy"]["steps"], "vs", data["automata"]["steps"])
+            # print("Dummy wins!:", data["dummy"]["steps"], "vs", data["automata"]["steps"])
 
-        else:
-            print("It's a tie, steps:", data["automata"]["steps"])
+        # else:
+        #     print("It's a tie, steps:", data["automata"]["steps"])
 
     # save to file
     with open(RESULTS_PATH, "w") as outfile:
