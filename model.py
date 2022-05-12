@@ -5,16 +5,16 @@ ITERATIONS = 69
 COST = 1
 
 # Paths
-CSV_PATH = "./Data.csv"
+CSV_PATH = "Data.csv"
 """
 The format of the CSV file is:
 Initial traffic level N;Initial traffic level E;Initial traffic level W;Green traffic light;Final traffic level N;Final traffic level E;Final traffic level W
 
 """
-PROBABILITIES_PATH = "./output/probabilities.json"
-VALUES_PATH = "./output/values.json"
-POLICIES_PATH = "./output/policies.json"
-LOGS_PATH = "./output/log.txt"
+PROBABILITIES_PATH = "output/probabilities.json"
+VALUES_PATH = "output/values.json"
+POLICIES_PATH = "output/policies.json"
+LOGS_PATH = "output/log.txt"
 
 # MDP model
 # states are defined as <N traffic level><E traffic level><W traffic level>
