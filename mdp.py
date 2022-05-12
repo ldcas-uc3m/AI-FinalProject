@@ -6,6 +6,25 @@ import csv
 import json
 
 
+def checkProbabilities(data: dict):
+    """
+    Checks the probabilities from infer() are correct
+    """
+    sum = {}
+    for hour in range(HOURS):
+        sum[hour] = {}
+        for action in ACTIONS:  # initialize sum for each action
+            sum[hour][action] = 0
+        for action in data[hour]:
+            for transition in data[hour][action]:
+
+                for i in range(len(ACTIONS)):
+                    if action == ACTIONS[i]:
+                        sum[hour][action] += data[hour][action][transition]
+
+    print("Sum of probabilities for each action (should be close to 1):", sum)
+
+
 def infer():
     """
     Get probabilities for each action and each transition, for each day, using data from CSV_PATH,
@@ -86,30 +105,11 @@ def infer():
                     if action == ACTIONS[i]:
                         json_data[hour][action][transition] /= count[hour][i]
 
-    checkProbabilities(json_data)
+    # checkProbabilities(json_data)
 
     # save to file
     with open(PROBABILITIES_PATH, "w") as outfile:
         json.dump(json_data, outfile, indent=4, sort_keys=True)
-
-
-def checkProbabilities(data: dict):
-    """
-    Checks the probabilities from infer() are correct
-    """
-    sum = {}
-    for hour in range(HOURS):
-        sum[hour] = {}
-        for action in ACTIONS:  # initialize sum for each action
-            sum[hour][action] = 0
-        for action in data[hour]:
-            for transition in data[hour][action]:
-
-                for i in range(len(ACTIONS)):
-                    if action == ACTIONS[i]:
-                        sum[hour][action] += data[hour][action][transition]
-
-    print("Sum of probabilities for each action (should be close to 1):", sum)
 
 
 def calculateValues():

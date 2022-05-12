@@ -36,6 +36,7 @@ def decide(state: str, hour: int, data: dict):
     global i
 
     if hour < 0 or hour > 23 or state not in STATES:
+        print(hour, state)
         raise "Invalid Parameters"
 
     if state == "LLL":  # do an action on a cycle

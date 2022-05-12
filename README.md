@@ -31,6 +31,8 @@ The decisions made by the automata are based on the optimal policies for each ho
    
 For the implementation of the solution of the problem, we developed three Python3 scripts: `model.py`, `mdp.py` and `automata.py`, plus a testing script, `test.py`.
 
+**IMPORTANT NOTE**: This implementation requires **Python 3.6 or higher** (as we need the `random.choices()` function for `nextState()` in `test.py`)
+
 ### `model.py`
 This script contains the constant variables used by the rest of the scripts, and models the MDP, the input data, the parameters, and the paths for the saved data.   
    

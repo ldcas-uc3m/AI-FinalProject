@@ -1,7 +1,7 @@
 # constant variables for the model of the MDP
 
 # Parameters
-ITERATIONS = 69
+ITERATIONS = 1000
 COST = 1
 
 # Paths
