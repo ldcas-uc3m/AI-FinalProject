@@ -29,9 +29,7 @@ indicates that we had High traffic coming in from the North and East and Low tra
 To solve this problem, we designed an automata that, given the current state of the traffic, in format `<North-traffic><East-traffic><West-traffic>` (eg, `HHL`), and the hour of the day (`0`-`23`), outputs the optimal action, that is, what traffic light to turn green (`N` for North, `E` for East and `W` for West).  
 The decisions made by the automata are based on the optimal policies for each hour and state calculated by a Markov Decision Process given the original data sample (`Data.csv`).  
    
-For the implementation of the solution of the problem, we developed three Python3 scripts: `model.py`, `mdp.py` and `automata.py`, plus a testing script, `test.py`.
-
-**IMPORTANT NOTE**: This implementation requires **Python 3.6 or higher** (as we need the `random.choices()` function for `nextState()` in `test.py`)
+For the implementation of the solution of the problem, we developed three Python3 scripts: `model.py`, `mdp.py` and `automata.py`.
 
 ### `model.py`
 This script contains the constant variables used by the rest of the scripts, and models the MDP, the input data, the parameters, and the paths for the saved data.   
@@ -50,5 +48,3 @@ We decided to save the data from each step of the MDP, even though only `output/
 This contains the implementation of the automata. We also included a couple of functions to generate random data (`generateRandomInput()`) and run the automata (`runAutomata()`), to provide an example of its use.  
   
 The real automata is the `decide()` function, which reads the optimal policies from the MDP and applies them to the input. In the case of reaching the goal state (`LLL`), it just cycles through the actions.
-
-### `test.py`
