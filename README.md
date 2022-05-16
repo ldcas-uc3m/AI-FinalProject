@@ -52,3 +52,7 @@ This contains the implementation of the automata. We also included a couple of f
 The real automata is the `decide()` function, which reads the optimal policies from the MDP and applies them to the input. In the case of reaching the goal state (`LLL`), it just cycles through the actions.
 
 ### `test.py`
+This script was developed in order to test the automata, for that we generate an initial random input, ask both the automata and a dummy automata that generates random actions for an action, and choose the next state, taking that action into account, and using the infered probabilities to randomly (but with weigts) generate the next action.  
+The automata with the least steps wins, and we do some iterations to find which one is better.  
+  
+Unfortunately, and we don't know why, this tests says that the dummy is 50-60% better than our automata, so we applied the Ostrich Algorihtm (that is, to stick one's head in the sand and pretend there is no problem) and created the [ostrich branch](https://github.com/ldcas-uc3m/AI-FinalProject/tree/ostrich).
